@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PlantController {
 
     private PlantService plantService;
-
+    
     public PlantController(PlantService plantService) {
         this.plantService = plantService;
     }

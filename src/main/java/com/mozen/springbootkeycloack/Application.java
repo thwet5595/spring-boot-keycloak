@@ -18,15 +18,15 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	public ApplicationRunner run(PlantRepository plantRepository) throws Exception {
-		return (ApplicationArguments args) -> {
-			List<Plant> plants = Arrays.asList(
-					new Plant("subalpine fir", "abies lasiocarpa", "pinaceae"),
-					new Plant("sour cherry", "prunus cerasus", "rosaceae"),
-					new Plant("asian pear", "pyrus pyrifolia", "rosaceae")
-			);
-			plantRepository.saveAll(plants);
-		};
-	}
+//	@Bean
+//	public ApplicationRunner run(PlantRepository plantRepository) throws Exception {
+//		return (ApplicationArguments args) -> {
+//			List<Plant> plants = Arrays.asList(
+//					new Plant("subalpine fir", "abies lasiocarpa", "pinaceae"),
+//					new Plant("sour cherry", "prunus cerasus", "rosaceae"),
+//					new Plant("asian pear", "pyrus pyrifolia", "rosaceae")
+//			);
+//			plantRepository.saveAll(plants);
+//		};
+//	}
 }
