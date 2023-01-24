@@ -27,7 +27,7 @@ public class CustomPasswordEncoder implements PasswordEncoder {
 	}
 
 	public static void main(String[]args) {
-		String password = "test123";
+		String password = "password";
 		System.out.println(" Password...." + password);
 		CustomPasswordEncoder customPasswordEncoder = new CustomPasswordEncoder();
 		String encoded = customPasswordEncoder.encode(password);
@@ -35,6 +35,6 @@ public class CustomPasswordEncoder implements PasswordEncoder {
 		System.out.println("Encode .." +encoded + "<<<Length>>>"
 				+ customPasswordEncoder.encode(password).length());
 		
-		System.out.println("Matches.."+ customPasswordEncoder.matches("test123", encoded));
+		System.out.println("Matches.."+ customPasswordEncoder.matches("password", encoded));
 	}
 }
