@@ -8,7 +8,11 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.time.Instant;
-
+/**
+ * @author Thwet Thwet Mar
+ *
+ *         Jan 16, 2023
+ */
 @Entity
 @Table(name = "plant")
 @Getter

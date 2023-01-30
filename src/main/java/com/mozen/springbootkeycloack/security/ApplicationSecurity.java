@@ -19,7 +19,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import com.mozen.springbootkeycloack.config.JwtTokenFilter;
-
+/**
+ * @author Thwet Thwet Mar
+ *
+ *         Jan 17, 2023
+ */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @Configuration
 @EnableWebSecurity

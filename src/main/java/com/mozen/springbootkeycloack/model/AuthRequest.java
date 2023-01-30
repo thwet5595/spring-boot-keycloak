@@ -4,7 +4,11 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
-
+/**
+ * @author Thwet Thwet Mar
+ *
+ *         Jan 16, 2023
+ */
 public class AuthRequest {
 	@NotNull
 	@Email

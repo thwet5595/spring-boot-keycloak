@@ -10,7 +10,11 @@ import org.springframework.stereotype.Component;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-
+/**
+ * @author Thwet Thwet Mar
+ *
+ *         Jan 17, 2023
+ */
 @Component
 public class JwtTokenUtil {
 

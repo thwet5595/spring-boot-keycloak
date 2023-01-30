@@ -1,5 +1,9 @@
 package com.mozen.springbootkeycloack.model;
-
+/**
+ * @author Thwet Thwet Mar
+ *
+ *         Jan 16, 2023
+ */
 public class AuthResponse {
 	private String email;
 	private String accessToken;
