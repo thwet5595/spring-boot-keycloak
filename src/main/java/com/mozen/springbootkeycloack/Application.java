@@ -1,6 +1,16 @@
 package com.mozen.springbootkeycloack;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.mozen.springbootkeycloack.model.Plant;
+import com.mozen.springbootkeycloack.repository.PlantRepository;
 
 @SpringBootApplication
 public class Application {
@@ -12,11 +22,9 @@ public class Application {
 //	@Bean
 //	public ApplicationRunner run(PlantRepository plantRepository) throws Exception {
 //		return (ApplicationArguments args) -> {
-//			List<Plant> plants = Arrays.asList(
-//					new Plant("subalpine fir", "abies lasiocarpa", "pinaceae"),
+//			List<Plant> plants = Arrays.asList(new Plant("subalpine fir", "abies lasiocarpa", "pinaceae"),
 //					new Plant("sour cherry", "prunus cerasus", "rosaceae"),
-//					new Plant("asian pear", "pyrus pyrifolia", "rosaceae")
-//			);
+//					new Plant("asian pear", "pyrus pyrifolia", "rosaceae"));
 //			plantRepository.saveAll(plants);
 //		};
 //	}

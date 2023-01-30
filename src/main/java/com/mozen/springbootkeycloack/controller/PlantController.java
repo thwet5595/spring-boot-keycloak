@@ -39,8 +39,8 @@ public class PlantController {
 	// hasAuthority('SCOPE_email')")
 	@PreAuthorize("hasAnyAuthority('SCOPE_sale')")
 	@GetMapping("/{plantId}")
-	public Plant getPlant(@PathVariable @NotNull Long plantId) {
-
+	public Plant getPlantByScope(@PathVariable @NotNull Long plantId) {
+		log.info("Inside request plant by scope...");
 		log.info("Request for plant " + plantId + " received");
 		KeycloakAuthenticationToken authentication = (KeycloakAuthenticationToken) SecurityContextHolder.getContext()
 				.getAuthentication();
@@ -60,5 +60,36 @@ public class PlantController {
 		}
 
 		return plantService.getPlant(plantId);
+	}
+	
+	@PreAuthorize("hasAnyAuthority('+959794807902')")
+	@GetMapping("/role/{plantId}")
+	public Plant getPlantByRole(@PathVariable @NotNull Long plantId) {
+		log.info("Inside requestPlantByRole....");
+		log.info("Request for plant " + plantId + " received");
+		KeycloakAuthenticationToken authentication = (KeycloakAuthenticationToken) SecurityContextHolder.getContext()
+				.getAuthentication();
+
+		//Principal principal = (Principal) authentication.getPrincipal();
+		KeycloakPrincipal principal=(KeycloakPrincipal)authentication.getPrincipal();
+		KeycloakSecurityContext session = principal.getKeycloakSecurityContext();
+		AccessToken token = session.getToken();
+		token.getScope();
+
+		String userIdByToken = "";
+
+		if (principal instanceof KeycloakPrincipal) {
+			KeycloakPrincipal<KeycloakSecurityContext> kPrincipal = (KeycloakPrincipal<KeycloakSecurityContext>) principal;
+			//IDToken token = kPrincipal.getKeycloakSecurityContext().getIdToken();
+			//userIdByToken = token.getSubject();
+		}
+
+		return plantService.getPlant(plantId);
+	}
+	
+	@PreAuthorize("@securityService.hasAccess(1)")
+	@GetMapping("/test")
+	public void testSecurityService() {
+		 System.out.println("Printing ...");
 	}
 }
