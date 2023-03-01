@@ -1,0 +1,33 @@
+server:
+   port: 8087
+   
+spring:
+   main:
+      allow-bean-definition-overriding: true
+   datasource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/spring_test?Unicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+      username: root
+      password: root12345
+   jpa:
+      hibernate.ddl-auto: update
+      generate-ddl: true
+      show-sql: true
+      
+logging:
+   level:
+      org:
+         springframework:
+            security: DEBUG
+            
+keycloak:
+  realm: test-realm
+  auth-server-url: http://localhost:8080/
+  resource: second-test-client
+  use-resource-role-mappings: true
+  public-client: true
+  bearer-only: true
+  principal-attribute: preferred_username
+
+jwt:
+   secret: test12345
